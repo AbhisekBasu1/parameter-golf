@@ -1,0 +1,16 @@
+{
+  "author": "AbhisekBasu1",
+  "github_id": "AbhisekBasu1",
+  "name": "11L FixedCkpt + G384 Packed Init",
+  "blurb": "Packaged fixed-checkpoint g384 reproduction on Modal 8xH100 SXM using a bundled init_model.ptz plus bundled prepacked_sbev.bin. Eval-only export path (ITERATIONS=0) reproduces the current best honest non-TTT g384 line at 1.12134430 sliding-window exact under the 16,000,000-byte cap. This is leaderboard-track, but not a new SOTA claim against merged PR #549 at 1.1194.",
+  "date": "2026-03-29T00:00:00Z",
+  "val_loss": 1.89333786,
+  "val_bpb": 1.12134430,
+  "pre_quant_val_loss": 1.9335,
+  "pre_quant_val_bpb": 1.1451,
+  "int6_zstd_val_loss": 1.93347991,
+  "int6_zstd_val_bpb": 1.14511571,
+  "bytes_total": 15965645,
+  "bytes_model_int6_zstd": 15806941,
+  "bytes_code": 158704
+}

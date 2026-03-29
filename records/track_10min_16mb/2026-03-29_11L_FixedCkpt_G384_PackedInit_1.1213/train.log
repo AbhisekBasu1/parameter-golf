@@ -1,0 +1,34 @@
+logs/pr414_fixed_ckpt_b10_k1024_v15424_g384_modal.txt
+val_bpb:enabled tokenizer_kind=sentencepiece tokenizer_path=./data/tokenizers/fineweb_1024_bpe.model
+train_loader:dataset:fineweb10B_sp1024 train_shards:1
+val_loader:shards pattern=./data/datasets/fineweb10B_sp1024/fineweb_val_*.bin tokens:62021632
+init_model:path=/root/parameter-golf/init_model.ptz strict=1 missing=0 unexpected=0
+model_params:26993756
+mtp_num_heads:0 mtp_loss_weight:0.2 mtp_params:0
+XSA:last_4 active_layers:[7, 8, 9, 10]
+world_size:8 grad_accum_steps:1
+sdp_backends:cudnn=False flash=True mem_efficient=False math=False
+attention_mode:gqa num_heads:8 num_kv_heads:4
+tie_embeddings:True embed_lr:0.035 head_lr:0.0 matrix_lr:0.025 scalar_lr:0.025
+mlp_activation:relu2
+train_batch_tokens:786432 train_seq_len:2048 iterations:0 warmup_steps:0 max_wallclock_seconds:600.000
+seed:42
+step:0/0 val_loss:1.9335 val_bpb:1.1451 train_time:0ms step_avg:0.01ms
+peak memory allocated: 1100 MiB reserved: 1448 MiB
+ema:applying EMA weights
+DIAGNOSTIC post_ema val_loss:1.9335 val_bpb:1.1451 eval_time:1948ms
+Serialized model: 106178569 bytes
+Code size: 158632 bytes
+export_bits_profile:block10_mlp_qproj7 tensors:4
+gradquant_bits:7 tensors:4 params:2097152
+gradquant_top:[('blocks.10.attn.c_q.weight', 7, 0.0), ('blocks.10.attn.proj.weight', 7, 0.0), ('blocks.10.mlp.fc.weight', 7, 0.0), ('blocks.10.mlp.proj.weight', 7, 0.0)]
+gradquant_bottom:[('blocks.10.attn.c_q.weight', 7, 0.0), ('blocks.10.attn.proj.weight', 7, 0.0), ('blocks.10.mlp.fc.weight', 7, 0.0), ('blocks.10.mlp.proj.weight', 7, 0.0)]
+export_prepacked_sbev_path:/root/parameter-golf/prepacked_sbev.bin bytes:49577
+Serialized model int6+zstd: 15806941 bytes
+Total submission size int6+zstd: 15965573 bytes
+Total submission size int8+zlib: 15965573 bytes
+final_int6_roundtrip val_loss:1.9335 val_bpb:1.1451 eval_time:1957ms
+final_int6_roundtrip_exact val_loss:1.93347991 val_bpb:1.14511571
+final_int6_sliding_window val_loss:1.8933 val_bpb:1.1213 stride:64 eval_time:292260ms
+final_int6_sliding_window_exact val_loss:1.89333786 val_bpb:1.12134430
+final_int8_zlib_roundtrip_exact val_loss:1.89333786 val_bpb:1.12134430
